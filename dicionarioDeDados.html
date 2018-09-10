@@ -1,5 +1,5 @@
 <html><head>
-<title>Schema Report for database: mydb</title>
+<title>Schema Report for database: tg_sysglog</title>
 <style>
         td,th {
         text-align:left;
@@ -29,7 +29,354 @@
         </style>
       </head>
      <body>
-<h1>Schema Report for database: mydb</h1>
+<h1>Schema Report for database: tg_sysglog</h1>
 <a id="home">Table List </a><br /><ul>
+<li><a href="#cargo">cargo </a></li>
+<li><a href="#cep">cep </a></li>
+<li><a href="#cidade">cidade </a></li>
+<li><a href="#databasechangelog">databasechangelog </a></li>
+<li><a href="#databasechangeloglock">databasechangeloglock </a></li>
+<li><a href="#empresa">empresa </a></li>
+<li><a href="#endereco">endereco </a></li>
+<li><a href="#estado">estado </a></li>
+<li><a href="#funcionario">funcionario </a></li>
+<li><a href="#map_config">map_config </a></li>
+<li><a href="#pessoa">pessoa </a></li>
+<li><a href="#regiao">regiao </a></li>
+<li><a href="#regiao_cep">regiao_cep </a></li>
+<li><a href="#role">role </a></li>
+<li><a href="#telefone">telefone </a></li>
+<li><a href="#tipo_empresa">tipo_empresa </a></li>
+<li><a href="#tipo_pessoa">tipo_pessoa </a></li>
+<li><a href="#user">user </a></li>
+<li><a href="#user_role">user_role </a></li>
 </ul>
+<a id="cargo"></a><table style="width:100%"><caption>Table: cargo </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela para cadastro dos cargos do funcionarios</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(60)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="cep"></a><table style="width:100%"><caption>Table: cep </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem os ceps e a cidae respectiva</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>CEP</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>NOME_RUA</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>BAIRRO</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>CIDADE_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="cidade"></a><table style="width:100%"><caption>Table: cidade </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem as cidades e o estado respectivo</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>NOME</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>ESTADO_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="databasechangelog"></a><table style="width:100%"><caption>Table: databasechangelog </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>VARCHAR(255)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>AUTHOR</td><td>VARCHAR(255)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>FILENAME</td><td>VARCHAR(255)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>DATEEXECUTED</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>ORDEREXECUTED</td><td>INT(11)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>EXECTYPE</td><td>VARCHAR(10)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>MD5SUM</td><td>VARCHAR(35)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>DESCRIPTION</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>COMMENTS</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>TAG</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>LIQUIBASE</td><td>VARCHAR(20)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>CONTEXTS</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>LABELS</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>DEPLOYMENT_ID</td><td>VARCHAR(10)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="databasechangeloglock"></a><table style="width:100%"><caption>Table: databasechangeloglock </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>LOCKED</td><td>BIT(1)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>LOCKGRANTED</td><td>DATETIME</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>LOCKEDBY</td><td>VARCHAR(255)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="empresa"></a><table style="width:100%"><caption>Table: empresa </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela de cadastro das empresas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>PESSOA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>TIPO_EMPRESA</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>TRANSPORTADORA</td><td>INT(11)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>EMPRESA_MATRIZ_ID</td><td>INT(11)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="endereco"></a><table style="width:100%"><caption>Table: endereco </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem os celulares das pessoas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>PESSOA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>CEP_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>NUMERO_LOGRADOURO</td><td>INT(11)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>COMPLEMENTO</td><td>VARCHAR(50)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="estado"></a><table style="width:100%"><caption>Table: estado </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem estados e Siglas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>NOME</td><td>VARCHAR(40)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>SIGLA</td><td>VARCHAR(2)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="funcionario"></a><table style="width:100%"><caption>Table: funcionario </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela para cadastro dos funcionarios</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>PESSOA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>EMPRESA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>CARGO_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="map_config"></a><table style="width:100%"><caption>Table: map_config </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela para salvar Chaves de configuração</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>NAME_KEY</td><td>VARCHAR(50)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>VALUE</td><td>VARCHAR(1000)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="pessoa"></a><table style="width:100%"><caption>Table: pessoa </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que cadastro das pessoas que usam o sistema</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>TIPO_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>NOME</td><td>VARCHAR(120)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>RAZAO_SOCIAL</td><td>VARCHAR(120)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>CPF</td><td>VARCHAR(11)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>CNPJ</td><td>VARCHAR(14)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>DATA_NASCIMENTO</td><td>VARCHAR(10)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>SEXO</td><td>VARCHAR(1)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="regiao"></a><table style="width:100%"><caption>Table: regiao </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela para cadastro das regiões de entrega das empresas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>EMPRESA_ID</td><td>INT(11)</td><td>No</td><td>No</td><td>Yes</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="regiao_cep"></a><table style="width:100%"><caption>Table: regiao_cep </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela N pra N de Regiao para Cep</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(50)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>REGIAO_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>CEP_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="role"></a><table style="width:100%"><caption>Table: role </caption>
+<tr><td>Table Comments</td><td colspan="6">TABELA PARA CONTROLE DAS AUTORIZACOES</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>NOME</td><td>VARCHAR(50)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="telefone"></a><table style="width:100%"><caption>Table: telefone </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem os celulares das pessoas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>TIPO_NUMERO</td><td>VARCHAR(10)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>NUMERO</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>PESSOA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="tipo_empresa"></a><table style="width:100%"><caption>Table: tipo_empresa </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que para diferenciar matriz de filiais</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(40)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="tipo_pessoa"></a><table style="width:100%"><caption>Table: tipo_pessoa </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela que contem os tipos das pessoas</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>DESCRICAO</td><td>VARCHAR(40)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="user"></a><table style="width:100%"><caption>Table: user </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela para cadastro dos usuarios</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>EMAIL</td><td>VARCHAR(50)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>SENHA</td><td>VARCHAR(500)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>PESSOA_ID</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="user_role"></a><table style="width:100%"><caption>Table: user_role </caption>
+<tr><td>Table Comments</td><td colspan="6">Tabela N pra N de User para Role</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>ID</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>USER_ID</td><td>INT(11)</td><td>No</td><td>No</td><td>Yes</td><td>NULL</td><td></td></tr>
+<tr><td>ROLE_ID</td><td>INT(11)</td><td>No</td><td>No</td><td>Yes</td><td>NULL</td><td></td></tr>
+</table><a href="#home">Table List </a></br>
 </body></html>
